@@ -18,5 +18,32 @@ public class Main {
         for (Product product : products) {
             System.out.println(product);
         }
+
+        // Simple E-Commerce System
+        // User System
+
+        System.out.println("\n==== User System ====");
+        Customer customer1 = new Customer("Customer(1)", "Adel", "adel@customer.com");
+        Customer customer2 = new Customer("Customer(2)", "Hamed", "hamed@customer.com");
+        Admin admin = new Admin("Admin(1)", "Mohamed", "mohamed@admin.com");
+
+        System.out.println(customer1.getUserDetails());
+        System.out.println(customer2.getUserDetails());
+        System.out.println(admin.getUserDetails());
+
+        customer1.placeOrder("Product(1)");
+        customer2.placeOrder(" ", -2);
+
+        admin.updateProduct(p1, 899.99);
+
+        // Payments
+
+        System.out.println("\n==== Payments ====");
+        Payment credit = new CreditCardPayment();
+        Payment paypal = new PayPalPayment();
+
+        credit.processPayment(100);
+        paypal.processPayment(200);
+
     }
 }
